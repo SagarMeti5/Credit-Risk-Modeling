@@ -1,105 +1,61 @@
 # Credit-Risk-Modeling
 Credit Risk Modeling – Loan Default Prediction. Overview This project predicts the probability of loan default (Probability of Default, PD) using historical credit data.   The model helps financial institutions assess creditworthiness and manage risk effectively.
-# Credit Risk Modeling – Loan Default Prediction
 
-Credit Risk Modeling with Lending Club Dataset
-Project Overview
+# Credit Risk Modeling using Lending Club Dataset
 
-This project predicts the probability of loan default using historical loan data from Lending Club. It demonstrates data preprocessing, exploratory data analysis, feature engineering, and machine learning modeling to build a robust credit risk model.
+## Overview
+This project predicts the likelihood of loan defaults using historical Lending Club loan data. It demonstrates **end-to-end data processing**, **feature engineering**, and **machine learning modeling** for credit risk assessment.  
 
-Key Features
+---
 
-Handles large datasets efficiently using sampling and preprocessing.
+## Key Highlights
+- Efficient handling of **large datasets (~1.5 GB)** using sampling.  
+- Implements **Random Forest** and **Logistic Regression** for classification.  
+- Provides **evaluation metrics** including Confusion Matrix, Classification Report, and Feature Importance.  
+- Fully reproducible in **Google Colab** using **Google Drive integration**.  
 
-Implements both Random Forest and Logistic Regression models for classification.
+---
 
-Provides evaluation metrics: Confusion Matrix, Classification Report, and Feature Importance.
+## Dataset
+- Source: [Lending Club Loan Data on Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club)  
+- Contains loan-related information including:  
+  - Loan amounts, interest rates, term, grades, employment length, annual income  
+  - Credit history features (delinquency, revol_util, total_acc)  
+  - Target variable: `loan_status` (Fully Paid or Charged Off)  
 
-Fully reproducible in Google Colab using Google Drive integration.
+---
 
-Dataset
+## Preprocessing Steps
+1. Handle missing values and drop irrelevant columns (e.g., IDs).  
+2. Encode categorical variables into numeric values using Label Encoding.  
+3. Convert `loan_status` to binary:  
+   - Fully Paid → 0  
+   - Charged Off → 1  
+4. Split data into **training and testing sets** (80/20 split).  
 
-Source: Lending Club Loan Data
+---
 
-Size: ~1.5 GB (CSV)
+## Modeling
+- **Random Forest Classifier**: Robust, handles multiple features, good for large datasets.  
+- **Logistic Regression**: Baseline model for comparison.  
+- **Evaluation Metrics**:  
+  - Confusion Matrix  
+  - Classification Report (Precision, Recall, F1-Score, Accuracy)  
+  - Feature Importance visualization (for Random Forest)  
 
-Includes information on loan amounts, interest rates, employment length, credit grades, and loan status.
+---
 
-Preprocessing Steps
+## How to Run
+1. Upload the dataset to **Google Drive**.  
+2. Mount Drive in Colab:
 
-Handle missing values and drop irrelevant columns (e.g., IDs).
 
-Encode categorical variables into numeric values.
-
-Convert target variable (loan_status) to binary:
-
-Fully Paid → 0
-
-Charged Off → 1
-
-Scale numeric features if needed.
-
-Split data into training and testing sets.
-
-Modeling
-
-Random Forest Classifier: Handles large datasets with multiple features, robust to overfitting.
-
-Logistic Regression: Simple baseline model for comparison.
-
-Evaluated using:
-
-Confusion Matrix
-
-Classification Report (Precision, Recall, F1-Score, Accuracy)
-
-Feature Importance (for Random Forest)
-
-How to Run
-
-Upload dataset to Google Drive.
-
-Mount Drive in Colab:
-
-Update the file_path variable in the notebook to point to your CSV.
-
-Run cells step by step:
-
-Load dataset
-
-Preprocess
-
-Train models
-
-Evaluate results
-
-Requirements
-
-Python 3.x
-
-Pandas
-
-Scikit-learn
-
-Matplotlib / Seaborn (optional for visualization)
-
-Install missing packages in Colab:
-
-!pip install pandas scikit-learn matplotlib seaborn
-
-Project Structure
-credit_risk_model/
-├── README.md
-├── credit_risk_model.ipynb   # Main Colab notebook
-├── data/                     # Folder to store dataset
-
-Future Work
+## Future Work
 
 Hyperparameter tuning for Random Forest and Gradient Boosting.
+Incorporate rejected applications for richer modeling.
+Deploy the model as a web app using Streamlit or Flask.
 
-Incorporate more features from rejected applications.
-
-Deploy as a web app using Streamlit or Flask.
 
 ## Author
 *Sagar Meti*  
